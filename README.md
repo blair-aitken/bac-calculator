@@ -23,15 +23,17 @@ The calculator is based on the Widmark formula, using calculations for estimated
 
 **For Women**: `TBW (L)=- 2.097+(0.1069 × height)+(0.2466 × weight)`
 
-The tool assumes an alcohol by volume (ABC) of 40%, an elimination rate of 0.2, a blood to breath ratio of 1:2300, a drinking duration of 10 minutes for .05% BAC and 15 minutes for .08% BAC, and an expected peak of 30 minutes for .05% BAC and 45 minutes for .08% BAC. These parameters can be modified in the `script.js` JavaScript file.
+The tool assumes (1) a 40% alcohol by volume (ABV); (2) a 0.2 elimination rate; (3) a 1:2300 blood to breath ratio, (4) a drinking duration of 10 minutes for 0.05% BAC and 15 minutes for 0.08% BAC; (5) and an expected peak of 30 minutes for .05% BAC and 45 minutes for .08% BAC. These parameters can be modified in the `script.js` JavaScript file.
 
 ## Setup
 
 ### Web-based version
 
-Go to https://blair-aitken.github.io/BAC_Calculator
+For the web-based version, go to: https://blair-aitken.github.io/BAC_Calculator.
 
 ### Local version 
+
+For a local version: 
 
 1. Clone the repository: `git clone https://github.com/YOUR_GITHUB_USERNAME/BAC-Calculator.git`
 2. Navigate to the repository's directory: `cd BAC-Calculator`
