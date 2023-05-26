@@ -4,29 +4,25 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    min-height: 750px;
-    min-width: 750px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 40px 50px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
     border-radius: 10px;
-    margin-bottom: 200px; 
+    margin-bottom: 200px;
 }
 
 h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 form {
