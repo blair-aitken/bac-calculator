@@ -9,11 +9,11 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
 - [Overview](#overview)
 - [How it Works](#how-it-works)
 - [Setup](#setup)
-  - [Web-based version](web-based-version)
-  - [Local version](local-version)
+  - [Web-based version](#web-based-version)
+  - [Local version](#local-version)
 - [How to use](#how-to-use)
 - [Disclaimer](#disclaimer)
-- [Contact information](contact-information)
+- [Contact information](#contact-information)
 
 ## How it Works
 
