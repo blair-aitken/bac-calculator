@@ -41,9 +41,9 @@ Go to https://blair-aitken.github.io/BAC_Calculator/
 
 After setting up, simply input your details into the calculator fields and it will estimate the amount of alcohol required to reach your desired BAC.
 
-Reccomended dose of alcohol (and mixer) for a '21' year old 'male' who is '180' cm tall and weighs '70' kg to reach a BAC of '0.05'.
+Reccomended dose of alcohol (and mixer) for a `21` year old `male` who is `180` cm tall and weighs `70` kg to reach a BAC of `0.05`.
 
-<img width="300" alt="Screenshot 2023-05-26 at 7 23 57 pm" src="https://github.com/blair-aitken/BAC_Calculator/assets/131508862/9dc9f0e5-38ed-4a8b-88fc-3bf6b2fc9479">
+<br><img width="350" alt="Screenshot 2023-05-26 at 7 23 57 pm" src="https://github.com/blair-aitken/BAC_Calculator/assets/131508862/9dc9f0e5-38ed-4a8b-88fc-3bf6b2fc9479"><br><br>
 
 ## Disclaimer
 
