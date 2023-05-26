@@ -45,7 +45,8 @@ After setting up, simply input your details into the calculator fields and it wi
 
 Reccomended dose of alcohol (and mixer) for a `21` year old `male` who is `180` cm tall and weighs `70` kg to reach a BAC of `0.05`.
 
-![Screenshot 2023-05-26 at 10 45 17 pm](https://github.com/blair-aitken/BAC_Calculator/assets/131508862/3d56327d-1a51-47b2-a5a4-46fd55f02366)
+![Image1](https://github.com/blair-aitken/BAC_Calculator/assets/131508862/a0fff901-81a3-4945-b7c6-b5541eaadf68)
+
 
 ## Disclaimer
 
