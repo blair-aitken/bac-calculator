@@ -4,24 +4,28 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 750px;
+    min-width: 750px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .container {
-    position: relative;
-    width: 90%;
-    max-width: 400px;
-    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    padding: 40px 50px;
     border-radius: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 100px; 
 }
 
 h1 {
     text-align: center;
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 700;
     margin-bottom: 30px;
 }
 
@@ -32,26 +36,25 @@ form {
 
 .input-field {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .input-field::after {
-    content: attr(data-unit);
-    position: absolute;
+    content: attr(data-unit); 
+    position: left;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
+    top: 9px; 
+    font-size: 22px;
     color: #000000;
 }
 
 .input-field input,
 .input-field select {
-    width: 100%;
+    width:75%;
     border: 0;
     border-bottom: 1.5px solid #ddd;
     outline: 0;
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     padding: 10px 0;
     background: transparent;
@@ -59,21 +62,21 @@ form {
 
 #result {
     position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 400px;
-    height: auto;
+    height: 70px; 
     padding: 20px;
     border: 2px solid #000000;
-    border-radius: 5px;
     font-size: 16px;
     color: #000000;
-    line-height: 1.6;
+    line-height: 1.5;
     text-align: center;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 #result div {
     display: flex;
