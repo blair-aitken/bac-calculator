@@ -16,17 +16,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
+    width: 300px;
     padding: 40px 50px;
     border-radius: 10px;
-    margin-bottom: 100px; 
+    margin-bottom: 200px; 
 }
 
 h1 {
     text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
 }
 
 form {
@@ -48,9 +48,19 @@ form {
     color: #000000;
 }
 
-.input-field input,
+.input-field input {
+    width:80%;
+    border: 0;
+    border-bottom: 1.5px solid #ddd;
+    outline: 0;
+    font-size: 20px;
+    color: #333;
+    padding: 10px 0;
+    background: transparent;
+}
+
 .input-field select {
-    width:75%;
+    width:100%;
     border: 0;
     border-bottom: 1.5px solid #ddd;
     outline: 0;
@@ -62,21 +72,23 @@ form {
 
 #result {
     position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 70px; 
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 80px; 
     padding: 20px;
-    border: 2px solid #000000;
-    font-size: 16px;
-    color: #000000;
-    line-height: 1.5;
+    border: 2px solid #000000; /* Add a border */
+    border-radius: 5px;
+    font-size: 18px;
+    color: rgb(0, 0, 0); /* Change text color for contrast */
+    line-height: 1.6;
     text-align: center;
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 #result div {
     display: flex;
