@@ -4,29 +4,25 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    min-height: 750px;
-    min-width: 750px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 40px 50px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
     border-radius: 10px;
-    margin-bottom: 200px; 
+    margin-bottom: 200px;
 }
 
 h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 form {
@@ -36,35 +32,26 @@ form {
 
 .input-field {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .input-field::after {
-    content: attr(data-unit); 
-    position: left;
+    content: attr(data-unit);
+    position: absolute;
     right: 0;
-    top: 9px; 
-    font-size: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
     color: #000000;
 }
 
-.input-field input {
-    width:80%;
-    border: 0;
-    border-bottom: 1.5px solid #ddd;
-    outline: 0;
-    font-size: 20px;
-    color: #333;
-    padding: 10px 0;
-    background: transparent;
-}
-
+.input-field input,
 .input-field select {
-    width:100%;
+    width: 100%;
     border: 0;
     border-bottom: 1.5px solid #ddd;
     outline: 0;
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
     padding: 10px 0;
     background: transparent;
@@ -72,16 +59,14 @@ form {
 
 #result {
     position: relative;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 80px; 
+    width: 90%;
+    max-width: 400px;
+    height: auto;
     padding: 20px;
-    border: 2px solid #000000; /* Add a border */
+    border: 2px solid #000000;
     border-radius: 5px;
-    font-size: 18px;
-    color: rgb(0, 0, 0); /* Change text color for contrast */
+    font-size: 16px;
+    color: #000000;
     line-height: 1.6;
     text-align: center;
     overflow: auto;
