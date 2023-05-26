@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>BAC Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="bac-calculator">
+            <div class="input-field">
+                <select id="sex" name="sex" required>
+                    <option value="">Select Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="input-field" data-unit="years">
+                <input id="age" placeholder="Age" name="age" required>
+            </div>
+            <div class="input-field" data-unit="cm">
+                <input id="height" placeholder="Height" name="height" required>
+            </div>
+            <div class="input-field" data-unit="kg">
+                <input id="weight" placeholder="Weight" name="weight" required>
+            </div>
+            <div class="input-field">
+                <select id="brac" name="brac" required>
+                    <option value="">Select target BAC</option>
+                    <option value="0.05">0.05</option>
+                    <option value="0.08">0.08</option>
+                </select>
+            </div>
+        </form>
+        <div id="result">Please enter values into all fields to calculate the alcohol and mixer dose.</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
