@@ -9,10 +9,11 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
 - [Overview](#overview)
 - [How it Works](#how-it-works)
 - [Setup](#setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
+  - [Web-based version](web-based-version)
+  - [Local version](local-version)
+- [How to use](#how-to-use)
 - [Disclaimer](#disclaimer)
-
+- [Contact information](contact-information)
 
 ## How it Works
 
@@ -26,7 +27,7 @@ The tool assumes an alcohol by volume (ABC) of 40%, an elimination rate of 0.2, 
 
 ## Setup
 
-### Webased version
+### Web-based version
 
 Go to https://blair-aitken.github.io/BAC_Calculator/
 
@@ -36,7 +37,7 @@ Go to https://blair-aitken.github.io/BAC_Calculator/
 2. Navigate to the repository's directory: `cd BAC-Calculator`
 3. Open the `index.html` file in your browser to use the calculator.
 
-## Usage
+## How to use
 
 After setting up, simply input your details into the calculator fields and it will estimate the amount of alcohol required to reach your desired BAC.
 
