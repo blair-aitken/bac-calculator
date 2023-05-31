@@ -20,7 +20,7 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: 500;
     margin-bottom: 30px;
 }
@@ -40,7 +40,7 @@ form {
     position: left;
     right: 0;
     top: 9px; 
-    font-size: 22px;
+    font-size: 1.5rem;
     color: #000000;
 }
 
@@ -49,7 +49,7 @@ form {
     border: 0;
     border-bottom: 1.5px solid #ddd;
     outline: 0;
-    font-size: 20px;
+    font-size: 1.3rem;
     color: #333;
     padding: 10px 0;
     background: transparent;
@@ -60,7 +60,7 @@ form {
     border: 0;
     border-bottom: 1.5px solid #ddd;
     outline: 0;
-    font-size: 20px;
+    font-size: 1.3rem;
     color: #333;
     padding: 10px 0;
     background: transparent;
@@ -76,7 +76,7 @@ form {
     padding: 20px;
     border: 2px solid #000000; /* Add a border */
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 1.2rem;
     color: rgb(0, 0, 0); /* Change text color for contrast */
     line-height: 1.6;
     text-align: center;
