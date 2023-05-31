@@ -29,7 +29,7 @@ The tool assumes (1) a 40% alcohol by volume (ABV); (2) a 0.2 elimination rate; 
 
 ### Web-based version
 
-For the web-based version, go to: https://blair-aitken.github.io/BAC_Calculator
+For the web and mobile version, go to: https://blair-aitken.github.io/BAC_Calculator
 
 ### Local version 
 
