@@ -19,7 +19,7 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
 
 ## How it Works
 
-The calculator is based on an adaped Widmark formula (Widmark, 1932) for dosing, applying the Watson method (Watson et al., 1981) for estimating total body water (TBW) in men and women: 
+The calculator is based on an adaped Widmark formula (Widmark, 1932) for dosing, applying the Watson method (Watson et al., 1981) for estimating total body water (TBW):
 
 **For Men**: `TBW (L)=2.447-(0.09516 × age)+(0.1074 × height)+(0.3362 × weight)`
 
