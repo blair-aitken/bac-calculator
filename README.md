@@ -35,8 +35,8 @@ For the web and mobile version, go to: https://blair-aitken.github.io/BAC_Calcul
 
 For a local version: 
 
-1. Clone the repository: `git clone https://github.com/blair-aitken/BAC-Calculator.git`
-2. Navigate to the repository's directory: `cd BAC-Calculator`
+1. Clone the repository: `git clone https://github.com/blair-aitken/BAC_Calculator.git`
+2. Navigate to the repository's directory: `cd BAC_Calculator`
 3. Open the `index.html` file in your browser to use the calculator.
 
 ## How to use
