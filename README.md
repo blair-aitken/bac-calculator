@@ -14,6 +14,8 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
 - [How to use](#how-to-use)
 - [Disclaimer](#disclaimer)
 - [Contact information](#contact-information)
+- [References](#references)
+
 
 ## How it Works
 
@@ -49,3 +51,9 @@ This calculator is intended for informational purposes only. Please remember tha
 
 ## Contact information
 For questions or additional information about this repository, please contact baitken@swin.edu.au.
+
+## References
+
+Watson, P. E., Watson, I. D. & Batt, R. D. (1981). Prediction of blood alcohol concentrations in human subjects. Updating the Widmark Equation. _Journal of Studies on Alcohol and Drugs, 42_(7), 547-556.
+
+Widmark, E. M. P. (1932) _Die theoretischen Grundlagen und die praktische Verwendbarkeit der gerichtlich-medizinischen Alkoholbestimmung._ Urban & Schwarzenberg.
