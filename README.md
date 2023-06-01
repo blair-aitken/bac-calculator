@@ -12,6 +12,7 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
   - [Web-based version](#web-based-version)
   - [Local version](#local-version)
 - [How to use](#how-to-use)
+- [Citing this work](#citing-this-work)
 - [Disclaimer](#disclaimer)
 - [Contact information](#contact-information)
 - [References](#references)
@@ -48,6 +49,19 @@ After setting up, simply input your details into the calculator fields and it wi
 Reccomended dose of alcohol (and mixer) for a 'male', who is `21` years old, `180` cm tall and weighs `70` kg to reach a BAC of `0.05`.
 
 <br><img src="https://github.com/blair-aitken/BAC_Calculator/assets/131508862/857fb674-e15e-47b6-8bea-e13b99cb4bc7" width="300" alt="Sample BAC calculation"><br><br>
+
+## Citing this work
+
+If you use this calculator in your research, please cite this repository. Here is an example citation:
+
+`@misc{Aitken2023,
+  author = {Blair Aitken},
+  title = {BAC Calculator},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://blair-aitken.github.io/BAC_Calculator}}
+}`
 
 ## Disclaimer
 
