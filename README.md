@@ -19,13 +19,17 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
 
 ## How it Works
 
-The calculator is based on an adaped Widmark formula (Widmark, 1932) for dosing, applying the Watson method (Watson et al., 1981) for estimating total body water (TBW):
+The calculator utilizes an adapted Widmark formula (Widmark, 1932) which applied the Watson method (Watson et al., 1981) for estimating total body water (TBW):
 
-**For Men**: `TBW (L)=2.447-(0.09516 × age)+(0.1074 × height)+(0.3362 × weight)`
+**For Men**: `TBW (L) = 2.447 - (0.09516 × age) + (0.1074 × height) + (0.3362 × weight)`
 
-**For Women**: `TBW (L)=- 2.097+(0.1069 × height)+(0.2466 × weight)`
+**For Women**: `TBW (L) = -2.097 + (0.1069 × height) + (0.2466 × weight)`
 
-The tool assumes (1) a 40% alcohol by volume (ABV); (2) a 0.2 elimination rate; (3) a 1:2300 blood to breath ratio, (4) a drinking duration of 10 minutes for 0.05% BAC and 15 minutes for 0.08% BAC; (5) and an expected peak of 30 minutes for .05% BAC and 45 minutes for .08% BAC. These parameters can be modified in the `script.js` JavaScript file.
+The calculator accounts for (a) drinking duration (10 minutes for 0.05% BAC, and 15 minutes for 0.08% BAC), (b) the expected time to reach peak BAC (30 minutes for 0.05% BAC, and 45 minutes for 0.08% BAC), (c) the rate at which alcohol is metabolized or eliminated from the body, typically at 20 mg/100ml/h, (d) a 0.8 conversion factor to translate the volume of alcohol to weight, and (e) the ratio of alcohol by volume of Vodka (40%). Using these paramters, the dose of alcohol per body weight (g) to achieve the target BAC is:
+
+`((TBW / .08) × (target BAC + 0.2 × ((drinking duration + expected peak) / 60))
+
+These parameters can be modified in the `script.js` JavaScript file.
 
 ## Setup
 
