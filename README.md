@@ -27,7 +27,7 @@ The calculator utilizes an adapted Widmark formula (Widmark, 1932) which applied
 
 The calculator accounts for (a) drinking duration (10 minutes for 0.05% BAC, and 15 minutes for 0.08% BAC), (b) the expected time to reach peak BAC (30 minutes for 0.05% BAC, and 45 minutes for 0.08% BAC), (c) the rate at which alcohol is metabolized or eliminated from the body, typically at 20 mg/100ml/h, (d) a 0.8 conversion factor to translate the volume of alcohol to weight, and (e) the ratio of alcohol by volume of Vodka (40%). Using these paramters, the dose of alcohol per body weight (g) to achieve the target BAC is:
 
-`((TBW / .08) × (target BAC + 0.2 × ((drinking duration + expected peak) / 60))
+`((TBW / .08) × (target BAC + 0.2 × ((drinking duration + expected peak) / 60))`
 
 These parameters can be modified in the `script.js` JavaScript file.
 
