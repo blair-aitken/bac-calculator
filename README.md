@@ -2,7 +2,7 @@
 
 ## Overview
 
-The BAC calculator serves as a tool for determining alcohol dosing based on an adjusted Widmark formula. It's designed to assist in estimating the amount of alcohol required to reach a target BAC.
+The BAC calculator serves as a tool for determining alcohol dosing based on an adjusted Watson method. It's designed to assist in estimating the amount of alcohol required to reach a target BAC.
 
 ## Table of Contents
 
