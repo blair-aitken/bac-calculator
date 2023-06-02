@@ -7,7 +7,6 @@ $('.input-field input, .input-field select').on('change', function() {
 
     if (sex && age && height && weight && brac) {
         const eliminationRate = 0.2; 
-        const bloodBreathRatio = 2300; 
         const drinkingDuration = (brac == 0.05) ? 10 : 15;
         const expectedPeak = (brac == 0.05) ? 30 : 45;
 
