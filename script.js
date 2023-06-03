@@ -26,7 +26,6 @@ $('.input-field input, .input-field select').on('change', function() {
         const alcohol40DoseGramPerKg = alcohol40DoseGram / weight;
     
         const mixerDose = alcohol40DoseGram * 3;
-        const totalDrink = mixerDose + alcohol40DoseGram;
 
         document.getElementById('result').innerHTML = `
     <p>Alcohol dose : <strong>${alcohol40DoseGram.toFixed(2)} g</strong></p>
