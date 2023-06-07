@@ -12,15 +12,14 @@
             position: relative;
             width: 100%;
             max-width: 400px;
-            margin-top: -1.75%;
+            margin-top: ;
             padding: 40px;
             border-radius: 10px;
-            margin-bottom: 200px;
         }
 
         h1 {
             text-align: center;
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 2000;
             margin-bottom: 30px;
             color: rgb(0, 0, 0); 
@@ -36,7 +35,7 @@
             margin-bottom: 35px;
             display: flex;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
 
         .input-field::after {
@@ -45,26 +44,27 @@
             right: 0;
             margin-top: 1.75%;
             margin-left: 2%;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
     
         .input-field input {
-            width: 35%;
+            width: 25%;
             border: 0;
             border-bottom: 1.5px solid #ddd;
             outline: 0;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             padding: 10px;
             background: transparent;
             text-align: center;
         }
 
         .input-field select {
-            width: 55%;
+            width: 45%;
             border: 0;
-            border-bottom: 1.5px solid #ddd;
+            text-align: center;
+            border-bottom: 1.25px solid #ddd;
             outline: 0;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: rgb(0, 0, 0);
             padding: 10px 0;
             background: transparent;
@@ -75,12 +75,12 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 300px;
+            width: 250px;
             height: 80px;
             padding: 20px;
-            border: 4px solid rgb(0, 0, 0);
+            border: 2px solid rgb(0, 0, 0);
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: rgb(0, 0, 0);
             line-height: 1.6;
             text-align: center;
