@@ -36,7 +36,7 @@ These parameters can be modified in the `script.js` JavaScript file.
 
 ### Web-based version
 
-For the web and mobile version, go to: https://blair-aitken.github.io/BAC_Calculator
+For the web version, go to: https://blair-aitken.github.io/BAC_Calculator
 
 ### Local version 
 
