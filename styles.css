@@ -56,20 +56,17 @@
             background: transparent;
             text-align: center;
         }
-
+     
         .input-field select {
             width: 55%;
-            border: none;
+            border: none; /* Minimalistic border */
             text-align: center;
-            border-bottom: 1.25px solid #ddd;
+            border-bottom: 1.25px solid #ddd; /* You can remove this line if you don't want a thicker bottom border */
             font-size: 1.25rem;
             color: rgb(0, 0, 0);
             padding: 10px 0;
             outline: none;
             background-color: transparent;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
           }
 
         #result {
