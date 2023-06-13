@@ -54,7 +54,7 @@ Reccomended dose of alcohol (and mixer) for a 'male', who is `21` years old, `18
 
 If you use this calculator in your research, please cite this repository. Here is an example citation:
 
-```R
+```
 @misc{Aitken2023,
   author = {Blair Aitken},
   title = {BAC Calculator},
