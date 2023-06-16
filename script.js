@@ -25,19 +25,20 @@ $('.input-field input, .input-field select').on('change', function() {
             alcohol40DoseGram = variable2E * estimatedTotalBodyWater / 0.8;
             mixerDose = alcohol40DoseGram * 3;
         } else if (brac == 0.05) {
+            const alcohol100DoseGram = (variable2E * estimatedTotalBodyWater / 0.8) + (eliminationRate * (drinkingDuration / 60 + expectedPeak / 60) * (estimatedTotalBodyWater / 0.8));
             alcohol40DoseGram = alcohol100DoseGram / 0.345;
             mixerDose = alcohol40DoseGram * 3;
         } else {
             // For "Placebo" option
-            alcohol40DoseGram = 0;
-            mixerDose = 0;
+            alcohol40DoseGram = 0.08 * estimatedTotalBodyWater / 0.8;
+            mixerDose = alcohol40DoseGram * 3;
         }
         
         const alcohol100DoseGram = alcohol40DoseGram * 0.345;
         const alcohol100DoseGramPerKg = alcohol100DoseGram / weight;
         const alcohol40DoseGramPerKg = alcohol40DoseGram / weight;
     
-        const doseLabel = (brac == 0.08) ? 'Non-alcoholic vodka' : 'Vodka';
+        const doseLabel = (brac == 0.08) ? 'Non-alcoholic vodka' : 'Alcohol dose';
     
         document.getElementById('result').innerHTML = `
             <p>${doseLabel}: <strong>${alcohol40DoseGram.toFixed(2)} g</strong></p>
