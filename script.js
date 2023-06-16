@@ -29,7 +29,9 @@ $('.input-field input, .input-field select').on('change', function() {
 
         const doseLabel = (brac == Placebo) ? 'Non-alcoholic vodka' : 'Vodka';
 
-    <p>${doseLabel}: <strong>${alcohol40DoseGram.toFixed(2)} g</strong></p>
+        
+        document.getElementById('result').innerHTML = `
+            <p>${doseLabel}: <strong>${alcohol40DoseGram.toFixed(2)} g</strong></p>
             <p>Orange juice: <strong>${mixerDose.toFixed(2)} g</strong></p>`;
     }
 
