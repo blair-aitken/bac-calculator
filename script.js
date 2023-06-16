@@ -27,7 +27,7 @@ $('.input-field input, .input-field select').on('change', function() {
     
         const mixerDose = alcohol40DoseGram * 3;
 
-        const doseLabel = (brac == Placebo) ? 'Non-alcoholic vodka' : 'Vodka';
+        const doseLabel = (brac == 0) ? 'Non-alcoholic vodka' : 'Vodka';
 
         
         document.getElementById('result').innerHTML = `
