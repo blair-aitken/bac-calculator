@@ -38,7 +38,7 @@ $('.input-field input, .input-field select').on('change', function() {
         const alcohol100DoseGramPerKg = alcohol100DoseGram / weight;
         const alcohol40DoseGramPerKg = alcohol40DoseGram / weight;
     
-        const doseLabel = (brac == 0.08) ? 'Non-alcoholic vodka' : 'Alcohol dose';
+        const doseLabel = (brac == Placebo) ? 'Non-alcoholic vodka' : 'Vodka';
     
         document.getElementById('result').innerHTML = `
             <p>${doseLabel}: <strong>${alcohol40DoseGram.toFixed(2)} g</strong></p>
