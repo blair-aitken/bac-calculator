@@ -69,13 +69,13 @@
             background-color: transparent;
           }
 
-        #result {
+          #result {
             position: relative;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 250px;
-            height: 80px;
+            width: 350px; /* Increase the width to accommodate the columns */
+            height: 100px; /* Adjust the height if needed */
             padding: 20px;
             border: 2px solid rgb(0, 0, 0);
             border-radius: 5px;
@@ -84,19 +84,18 @@
             line-height: 1.6;
             text-align: center;
             display: flex;
+            flex-direction: row; /* Align the columns horizontally */
             align-items: center;
             justify-content: center;
-        }
-
-        #result div {
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        #result div span {
-            font-weight: bold;
-        }
-
-        #result div:last-child {
-            margin-bottom: 0;
-        }
+          }
+       
+    
+          #result p1 {
+            margin-right: 35px; 
+            font-size: 1.25rem;
+          }
+          
+          #result p2 {
+            margin-left: 35px; 
+            font-size: 1.25rem;
+          }
