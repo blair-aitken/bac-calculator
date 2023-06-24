@@ -33,10 +33,11 @@ $('.input-field input, .input-field select').on('change', function() {
         }
     
         const mixerDose = alcohol40DoseGram * 3;
-
+  
         document.getElementById('result').innerHTML = `
     <p1>${alcoholType}<br><strong>${alcohol40DoseGram.toFixed(2)} g</strong></p1>
     <p2>Orange Juice:<br><strong>${mixerDose.toFixed(2)} g</strong></p2>`;
+    
     }
 
 });
