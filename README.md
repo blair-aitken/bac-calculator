@@ -26,7 +26,7 @@ The calculator employs an adapted Widmark formula (Widmark, 1932) that employs t
 
 **For Women**: `TBW (L) = -2.097 + (0.1069 × height) + (0.2466 × weight)`
 
-The calculator also takes into account (a) drinking duration (10 minutes for 0.05% BAC, and 15 minutes for 0.08% BAC), (b) the expected time to reach peak BAC (30 minutes for 0.05% BAC, and 45 minutes for 0.08% BAC), (c) the rate at which alcohol is metabolized or eliminated from the body, typically at 20 mg/100ml/h, (d) a 0.8 conversion factor to translate the volume of alcohol to weight, and (e) the alcohol by volume of Vodka (40%). Using these assumptions, the alcohol dose to attain the target BAC is as follows:
+The calculator also takes into account (a) drinking duration (10 minutes for 0.05% BAC, and 15 minutes for 0.08% BAC), (b) the expected time to reach peak BAC (30 minutes for 0.05% BAC, and 45 minutes for 0.08% BAC), (c) the rate at which alcohol is metabolized or eliminated from the body, typically at 20 mg/100 ml/h, (d) a 0.8 conversion factor to translate the volume of alcohol to weight, and (e) the alcohol by volume of Vodka (40%). Using these assumptions, the alcohol dose to attain the target BAC is as follows:
 
 `(0.2 × TBW / 0.8) + (0.2 × (drinking duration / 60 + expected peak / 60) × (TBW / 0.8)) / weight`
 
