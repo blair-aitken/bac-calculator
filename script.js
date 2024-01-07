@@ -7,8 +7,24 @@ $('.input-field input, .input-field select').on('change', function() {
 
     if (sex && age && height && weight && brac) {
         const eliminationRate = 0.2; 
-        const drinkingDuration = (brac == 0.08 || brac == 1) ? 15 : 10;
-        const expectedPeak = (brac == 0.08 || brac == 1) ? 45 : 35;
+
+        let drinkingDuration;
+        if (brac == 0.10) {
+            drinkingDuration = 30;
+        } else if (brac == 0.08 || brac == 1) {
+            drinkingDuration = 15;
+        } else {
+            drinkingDuration = 10;
+        }
+        
+         let expectedPeak;
+        if (brac == 0.10) {
+            expectedPeak = 60; // 1 hour for 0.10 BAC level
+        } else if brac == 0.08 || brac == 1) {
+            expectedPeak = 45;
+        } else {
+            ex[ectedPeak = 35;
+        }
 
         let estimatedTotalBodyWater;
         if (sex == 'male') {
