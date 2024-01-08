@@ -20,10 +20,10 @@ $('.input-field input, .input-field select').on('change', function() {
          let expectedPeak;
         if (brac == 0.10) {
             expectedPeak = 60; 
-        } else if brac == 0.08 || brac == 1) {
+        } else if (brac == 0.08 || brac == 1) {
             expectedPeak = 45;
         } else {
-            ex[ectedPeak = 35;
+            expectedPeak = 35;
         }
 
         let estimatedTotalBodyWater;
@@ -40,7 +40,7 @@ $('.input-field input, .input-field select').on('change', function() {
             variable2E = 1.10; // Value for 0.10 BAC
         } else if (brac == 0.05) {
             variable2E = 0.55;
-
+        }    
 
         const alcohol100DoseGram = (variable2E * estimatedTotalBodyWater / 0.8) + (eliminationRate * (drinkingDuration / 60 + expectedPeak / 60) * (estimatedTotalBodyWater / 0.8));
         const alcohol100DoseGramPerKg = alcohol100DoseGram / weight;
@@ -61,6 +61,5 @@ $('.input-field input, .input-field select').on('change', function() {
     <p1>${alcoholType}<br><strong>${alcohol40DoseGram.toFixed(2)} g</strong></p1>
     <p2>Orange Juice:<br><strong>${mixerDose.toFixed(2)} g</strong></p2>`;
     
-    }
-
-});
+}
+    });
