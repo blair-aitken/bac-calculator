@@ -19,7 +19,7 @@ $('.input-field input, .input-field select').on('change', function() {
         
          let expectedPeak;
         if (brac == 0.10) {
-            expectedPeak = 60; // 1 hour for 0.10 BAC level
+            expectedPeak = 60; 
         } else if brac == 0.08 || brac == 1) {
             expectedPeak = 45;
         } else {
@@ -33,7 +33,14 @@ $('.input-field input, .input-field select').on('change', function() {
             estimatedTotalBodyWater = -2.097 + 0.1069 * height + 0.2466 * weight;
         }
 
-        const variable2E = (brac == 0.08 || brac == 1) ? 0.88 : 0.55;
+        let variable2E;
+        if (brac == 0.08) {
+            variable2E = 0.88;
+        } else if (brac == 0.10) {
+            variable2E = 1.10; // Value for 0.10 BAC
+        } else if (brac == 0.05) {
+            variable2E = 0.55;
+
 
         const alcohol100DoseGram = (variable2E * estimatedTotalBodyWater / 0.8) + (eliminationRate * (drinkingDuration / 60 + expectedPeak / 60) * (estimatedTotalBodyWater / 0.8));
         const alcohol100DoseGramPerKg = alcohol100DoseGram / weight;
