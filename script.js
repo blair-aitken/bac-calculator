@@ -19,7 +19,7 @@ $('.input-field input, .input-field select').on('change', function() {
         
          let expectedPeak;
         if (brac == 0.10) {
-            expectedPeak = 60; 
+            expectedPeak = 55; 
         } else if (brac == 0.08 || brac == 1) {
             expectedPeak = 45;
         } else {
