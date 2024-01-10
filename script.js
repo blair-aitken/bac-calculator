@@ -6,7 +6,7 @@ $('.input-field input, .input-field select').on('change', function() {
     const brac = parseFloat(document.getElementById('brac').value);
 
     if (sex && age && height && weight && brac) {
-        const eliminationRate = 0.2; 
+        const eliminationRate = 0.3; 
 
         let drinkingDuration;
         if (brac == 0.10) {
