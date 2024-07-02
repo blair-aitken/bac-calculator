@@ -47,18 +47,11 @@ $('.input-field input, .input-field select').on('change', function() {
 
         const alcohol40DoseGram = alcohol100DoseGram / 0.345;
         const alcohol40DoseGramPerKg = alcohol40DoseGram / weight;
-
-        let alcoholType;
-        if (brac == 1) {
-            alcoholType = "Stryyk:";
-        } else {
-            alcoholType = "Vodka:";
-        }
     
         const mixerDose = alcohol40DoseGram * 3;
   
         document.getElementById('result').innerHTML = `
-    <p1>${alcoholType}<br><strong>${alcohol40DoseGram.toFixed(2)} g</strong></p1>
+    <p1>Vodka:<br><strong>${alcohol40DoseGram.toFixed(2)} g</strong></p1>
     <p2>Orange Juice:<br><strong>${mixerDose.toFixed(2)} g</strong></p2>`;
     
 }
