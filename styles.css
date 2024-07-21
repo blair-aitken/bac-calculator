@@ -161,6 +161,13 @@ form {
   background-color: transparent;
 }
 
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: transparent !important;
+    color: rgb(0, 0, 0) !important;
+}
+
 #age {
   width: 11.5%;
 }
