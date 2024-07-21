@@ -1,246 +1,104 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+function showContent(contentId) {
+    // Hide all tabcontent elements
+    let tabcontents = document.querySelectorAll(".tabcontent");
+    tabcontents.forEach(function(content) {
+        content.classList.remove("active");
+    });
+
+    // Remove active class from all buttons
+    let buttons = document.querySelectorAll(".sidebar button");
+    buttons.forEach(function(button) {
+        button.classList.remove("active");
+    });
+
+    // Show the selected tabcontent
+    document.getElementById(contentId).classList.add("active");
+
+    // Add active class to the clicked button
+    let clickedButton = document.querySelector(`.sidebar button[data-content="${contentId}"]`);
+    clickedButton.classList.add("active");
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Raleway', sans-serif;
-  background-color: #000000;
-  color: #fff;
+// Initialize the first tabcontent and button as active
+document.addEventListener("DOMContentLoaded", function() {
+    showContent('calculator');
+});
+
+// Function to calculate alcohol and mixer dose
+document.querySelectorAll('.input-field input, .input-field select').forEach(function(el) {
+    el.addEventListener('change', function() {
+        calculateDose();
+    });
+});
+
+function calculateDose() {
+    const sex = document.getElementById('sex').value;
+    const age = parseFloat(document.getElementById('age').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    const brac = parseFloat(document.getElementById('brac').value);
+
+    if (sex && age && height && weight && brac) {
+        const eliminationRate = 0.3; // Alcohol elimination rate
+
+        let drinkingDuration;
+        if (brac === 0.10) {
+            drinkingDuration = 30;
+        } else if (brac === 0.08) {
+            drinkingDuration = 15;
+        } else {
+            drinkingDuration = 10;
+        }
+
+        let expectedPeak;
+        if (brac === 0.10) {
+            expectedPeak = 55;
+        } else if (brac === 0.08) {
+            expectedPeak = 45;
+        } else {
+            expectedPeak = 35;
+        }
+
+        let estimatedTotalBodyWater;
+        if (sex === 'male') {
+            estimatedTotalBodyWater = 2.447 - 0.09516 * age + 0.1074 * height + 0.3362 * weight;
+        } else {
+            estimatedTotalBodyWater = -2.097 + 0.1069 * height + 0.2466 * weight;
+        }
+
+        let variable2E;
+        if (brac === 0.08) {
+            variable2E = 0.88;
+        } else if (brac === 0.10) {
+            variable2E = 1.10; // Value for 0.10 BAC
+        } else if (brac === 0.05) {
+            variable2E = 0.55;
+        }
+
+        const alcohol100DoseGram = (variable2E * estimatedTotalBodyWater / 0.8) + (eliminationRate * (drinkingDuration / 60 + expectedPeak / 60) * (estimatedTotalBodyWater / 0.8));
+        const alcohol100DoseGramPerKg = alcohol100DoseGram / weight;
+
+        const alcohol40DoseGram = alcohol100DoseGram / 0.345;
+        const alcohol40DoseGramPerKg = alcohol40DoseGram / weight;
+
+        const mixerDose = alcohol40DoseGram * 3;
+
+        document.getElementById('result').innerHTML = `
+            <p1>Vodka:<br><strong>${alcohol40DoseGram.toFixed(2)} g</strong></p1>
+            <p2>Orange Juice:<br><strong>${mixerDose.toFixed(2)} g</strong></p2>`;
+    }
 }
 
-p {
-  max-width: 600px;
-  line-height: 160%;
-}
+function selectOption(field, value, button) {
+    document.getElementById(field).value = value;
 
-.code-block {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  color: #ffffff;
-  max-width: 600px;
-}
+    // Update the active state of buttons within the same group
+    let buttons = button.parentElement.querySelectorAll('button');
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
 
-.code-block .keyword {
-  color: #bababa;
-}
+    button.classList.add("active");
 
-.code-block .string {
-  color: #FFC799;
-}
-
-.code-block .comment {
-  color: #6ee7b7;
-}
-
-.wrapper {
-  display: flex;
-}
-
-.sidebar {
-  background-color: #000000;
-  padding: 70px;
-  width: 400px;
-}
-
-.sidebar button {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  margin-bottom: 1px;
-  background-color: #000000;
-  color: #fff;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-top: 1px solid #333;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.sidebar button.active {
-  background-color: #fff;
-  color: #111;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  padding-top: 70px;
-}
-
-.tabcontent {
-  display: none;
-}
-
-.tabcontent.active {
-  display: block;
-}
-
-.container {
-  position: relative;
-  max-width: 800px;
-  align-items: left;
-  justify-content: left;
-}
-
-h1 {
-  text-align: left;
-  font-weight: 600;
-  margin-bottom: 30px;
-  color: rgb(255, 255, 255);
-}
-
-h2 {
-  text-align: left;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: rgb(255, 255, 255);
-}
-
-h3 {
-  font-size: xx-large;
-  text-align: left;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: rgb(255, 255, 255);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-field:not(:last-child) {
-  margin-bottom: 25px;
-}
-
-.input-field {
-  position: relative;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: left;
-}
-
-.input-field::after {
-  content: attr(data-unit);
-  position: left;
-  right: 10;
-  margin-top: 1.75%;
-  margin-left: 2%;
-}
-
-.input-field input {
-  width: 25%;
-  border: 0;
-  border-bottom: 1px solid #333;
-  outline: 0;
-  font-size: 1rem;
-  padding: 10px;
-  background: transparent;
-  text-align: center;
-  color: white;
-}
-
-.input-field select {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  padding: 10px;
-  outline: none;
-  background-color: transparent;
-}
-
-#age {
-  width: 11.5%;
-}
-
-#height {
-  width: 9%;
-}
-
-#weight {
-  width: 8.75%;
-}
-
-#result {
-  position: absolute;
-  width: 50%;
-  height: 100px;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-  line-height: 1.6;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-#result p1 {
-  margin-right: 35px;
-}
-
-#result p2 {
-  margin-left: 35px;
-}
-
-.button-group {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: -10px;
-}
-
-label {
-  align-content: center;
-  margin-right: 15px;
-}
-
-.button-group button {
-  margin: 15px;
-  padding: 14px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #000;
-  color: #ffffff;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  transition: background-color 0.3s ease;
-  text-align: center;
-}
-
-.button-group button.active {
-  background-color: #fff !important;
-  color: #111;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-a {
-  color: #6ee7b7;;
-}
-
-.largebr {
-  margin-bottom: 5%;
-}
-
-img {
-  border: 2px solid white; /* Adjust the thickness as needed */
-  display: block;
+    calculateDose();
 }
