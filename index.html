@@ -1,42 +1,105 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Alcohol Dosing Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Alcohol Dosing Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body></body>
-    <div class="container">  
-    <h1>Alcohol Dosing Calculator</h1>
-        <form id="bac-calculator">
-            <div class="input-field">
-                <select id="sex" name="sex" required>
-                    <option value="">Select Sex</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
+<body>
+   <div class="wrapper">
+        <div class="sidebar">
+            <h3>Alcohol Dosing Calculator</h3>
+            <button onclick="showContent('calculator')" class="active" data-content="calculator">Calculator</button>
+            <button onclick="showContent('overview')" data-content="overview">Overview</button>
+            <button onclick="showContent('contact')" data-content="contact">Contact</button>
+        </div>
+        <div class="content">
+            <div id="calculator" class="tabcontent active">
+                <div class="container">  
+        
+                    <form id="bac-calculator">
+                        <div class="input-field">
+                            <div class="button-group">
+                                <label>Select sex:</label>
+                                <button type="button" onclick="selectOption('sex', 'male', this)">Male</button>
+                                <button type="button" onclick="selectOption('sex', 'female', this)">Female</button>
+                            </div>
+                            <input type="hidden" id="sex" name="sex" required>
+                        </div>
+                        <div class="input-field" data-unit="years">
+                            <label>Enter age:</label>
+                            <input id="age" name="age" required>
+                        </div>
+                        <div class="input-field" data-unit="cm">
+                            <label>Enter height:</label>
+                            <input id="height" name="height" required>
+                        </div>
+                        <div class="input-field" data-unit="kg">
+                            <label>Enter weight:</label>
+                            <input id="weight" name="weight" required>
+                        </div>
+                        <div class="input-field">
+                            <div class="button-group">
+                                <label>Select dose:</label>
+                                <button type="button" onclick="selectOption('brac', '0.05', this)">0.05%</button>
+                                <button type="button" onclick="selectOption('brac', '0.08', this)">0.08%</button>
+                                <button type="button" onclick="selectOption('brac', '0.10', this)">0.10%</button>
+                            </div>
+                            <input type="hidden" id="brac" name="brac" required>
+                        </div>
+                    </form>
+                    <div id="result">Please enter values into all fields to calculate the alcohol and mixer dose.</div>
+                </div>
             </div>
-            <div class="input-field" data-unit="years">
-                <input id="age" placeholder="Age" name="age" required>
+            <div id="overview" class="tabcontent">
+                <h1>Overview</h1>
+                <h2>How it Works</h2>
+                <p>The BAC calculator serves as a tool for determining alcohol dosing based on an adjusted Watson method. The calculator is pre-configured for Vodka as the treatment and includes the most common target BACs reported in the literature. However, you are welcome to modify the JavaScript to change these settings as needed. </p>
+                <br>
+                <p>The calculator uses the Watson method (Watson et al., 1981) to calculate total body water (TBW):</p>
+                <br>
+                <div class="code-block">
+                    <p><span class="string">For men:</span> 2.447 - (0.09516 × <span class="comment">age</span>) + (0.1074 × <span class="comment">height</span>) + (0.3362 × <span class="comment">weight</span>)</p>
+                    <br>
+                    <p><span class="string">For women:</span> -2.097 - (0.1069 × <span class="comment">age</span>) + (0.2466 × <span class="comment">height</span>) + (0.3362 × <span class="comment">weight</span>)</p>
+                </div>
+                <br>
+                <p>The calculator also takes into account (a) drinking duration (10 minutes for 0.05% BAC, and 15 minutes for 0.08% BAC), (b) the expected time to reach peak BAC (30 minutes for 0.05% BAC, and 45 minutes for 0.08% BAC), (c) the rate at which alcohol is metabolized or eliminated from the body, typically at 20 mg/100 ml/h, (d) a 0.8 conversion factor to translate the volume of alcohol to weight, and (e) the alcohol by volume of Vodka (40%). Using these assumptions, the alcohol dose to attain the target BAC is as follows:</p>
+                <br>
+                <div class="code-block">
+                    <p>(0.2 × <span class="comment">TBW</span> / 0.8) + (0.2 × (<span class="comment">drinking duration</span> / 60 + <span class="comment">expected peak</span> / 60) + (<span class="comment">TBW</span> / 0.8) / <span class="comment">weight</span></p>
+                </div>
+                <br><br>
+                <h2>Citing this Work</h2>
+                <p>If you use this calculator in your research, please cite the GitHub repository:</p>
+                <br>
+                <div class="code-block">
+                    <p>@misc{Aitken2023,<br>
+                        author = {Blair Aitken},<br>
+                        title = {BAC Calculator},<br>
+                        year = {2023},<br>
+                        publisher = {GitHub},<br>
+                        journal = {GitHub repository},<br>
+                        howpublished = {\url{https://blair-aitken.github.io/BAC_Calculator}}<br>
+                      }</p> </div>
+                      <br><br>
+                <h2>Disclaimer</h2>
+                <p>This calculator is intended for informational purposes only. Please remember that the actual BAC achieved can vary with individual metabolic rates, health status, and other factors. This calculator should not be used to determine whether it is safe to drive or perform other tasks. Always drink responsibly and never drink and drive.</p>
+                <div class="largebr"></div>
             </div>
-            <div class="input-field" data-unit="cm">
-                <input id="height" placeholder="Height" name="height" required>
+            <div id="contact" class="tabcontent">
+                    <h1>Contact</h1>
+                    <p>If you have any questions, please contact the author at:</p><br>
+                    Email: <a href="mailto:baitken@swin.edu.au">baitken@swin.edu.au</a><br><br>
+                    Github: <a href="https://github.com/blair-aitken">@blair-aitken</a>
+                <br>
+                </div>
             </div>
-            <div class="input-field" data-unit="kg">
-                <input id="weight" placeholder="Weight" name="weight" required>
-            </div>
-            <div class="input-field">
-                <select id="brac" name="brac" required>
-                    <option value="">Select target BAC</option>
-                    <option value="0.05">0.05%</option>
-                    <option value="0.08">0.08%</option>
-                    <option value="0.10">0.10%</option>
-                </select>
-            </div>
-        </form>
-        <div id="result">Please enter values into all fields to calculate the alcohol and mixer dose.</div>
+        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
