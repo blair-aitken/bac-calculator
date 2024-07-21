@@ -2,7 +2,7 @@
 
 ## Overview
 
-The BAC calculator serves as a tool for determining alcohol dosing based on an adjusted Watson method. It's designed to assist in estimating the amount of alcohol required to reach a target BAC.
+The BAC calculator serves as a tool for determining alcohol dosing based on an adjusted Watson method. The calculator is pre-configured for Vodka as the treatment and includes the most common target BACs reported in the literature. However, you are welcome to modify the JavaScript to change these settings as needed.
 
 ## Table of Contents
 
@@ -42,14 +42,6 @@ For the web version, go to: https://blair-aitken.github.io/BAC_Calculator
 
 For a local version, use `git clone` or download the project from this page. 
 
-## How to use
-
-After setting up, simply input your details into the calculator fields and it will estimate the amount of alcohol required to reach your desired BAC.
-
-Reccomended dose of alcohol (and mixer) for a 'male', who is `21` years old, `180` cm tall and weighs `70` kg to reach a BAC of `0.05`.
-
-<br><img src="https://github.com/blair-aitken/BAC_Calculator/assets/131508862/857fb674-e15e-47b6-8bea-e13b99cb4bc7" width="300" alt="Sample BAC calculation"><br><br>
-
 ## Citing this work
 
 If you use this calculator in your research, please cite this repository. Here is an example citation:
@@ -70,7 +62,7 @@ If you use this calculator in your research, please cite this repository. Here i
 This calculator is intended for informational purposes only. Please remember that the actual BAC achieved can vary with individual metabolic rates, health status, and other factors. This calculator should not be used to determine whether it is safe to drive or perform other tasks. Always drink responsibly and never drink and drive.
 
 ## Contact information
-For questions or additional information about this repository, please contact baitken@swin.edu.au.
+For questions or additional information about this repository, please contact the author at baitken@swin.edu.au.
 
 ## References
 
