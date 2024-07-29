@@ -11,14 +11,15 @@
    <div class="wrapper">
         <div class="sidebar">
             <h3>Alcohol Dosing Calculator</h3>
+            <div class="menu">
             <button onclick="showContent('calculator')" class="active" data-content="calculator">Calculator</button>
             <button onclick="showContent('overview')" data-content="overview">Overview</button>
             <button onclick="showContent('contact')" data-content="contact">Contact</button>
         </div>
+        </div>
         <div class="content">
             <div id="calculator" class="tabcontent active">
                 <div class="container">  
-        
                     <form id="bac-calculator">
                         <div class="input-field">
                             <div class="button-group">
@@ -26,19 +27,19 @@
                                 <button type="button" onclick="selectOption('sex', 'male', this)">Male</button>
                                 <button type="button" onclick="selectOption('sex', 'female', this)">Female</button>
                             </div>
-                            <input type="hidden" id="sex" name="sex" required>
+                            <input type="hidden" id="sex" name="sex" autocomplete="off" required>
                         </div>
                         <div class="input-field" data-unit="years">
                             <label>Enter age:</label>
-                            <input id="age" name="age" required>
+                            <input id="age" name="age" autocomplete="off" required>
                         </div>
                         <div class="input-field" data-unit="cm">
                             <label>Enter height:</label>
-                            <input id="height" name="height" required>
+                            <input id="height" name="height" autocomplete="off" required>
                         </div>
                         <div class="input-field" data-unit="kg">
                             <label>Enter weight:</label>
-                            <input id="weight" name="weight" required>
+                            <input id="weight" name="weight" autocomplete="off" required>
                         </div>
                         <div class="input-field">
                             <div class="button-group">
