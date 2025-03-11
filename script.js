@@ -70,7 +70,9 @@ function calculateDose() {
         if (brac === 0.08) {
             variable2E = 0.88;
         } else if (brac === 0.10) {
-            variable2E = 1.10; // Value for 0.10 BAC
+            variable2E = 1.10;
+        } else if (brac === 0.06) {
+            variable2E = 0.66;
         } else if (brac === 0.05) {
             variable2E = 0.55;
         }
