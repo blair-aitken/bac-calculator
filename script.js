@@ -55,6 +55,8 @@ function calculateDose() {
             expectedPeak = 55;
         } else if (brac === 0.08) {
             expectedPeak = 45;
+        } else if (brac === 0.06) {
+            expectedPeak = 40;
         } else {
             expectedPeak = 35;
         }
