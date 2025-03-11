@@ -80,10 +80,12 @@ function calculateDose() {
         }
 
         const alcohol100DoseGram = (variable2E * estimatedTotalBodyWater / 0.8) + (eliminationRate * (drinkingDuration / 60 + expectedPeak / 60) * (estimatedTotalBodyWater / 0.8));
-        const alcohol100DoseGramPerKg = alcohol100DoseGram / weight;
+        
+        
 
         const alcohol40DoseGram = alcohol100DoseGram / 0.345;
-        const alcohol40DoseGramPerKg = alcohol40DoseGram / weight;
+        
+        const alcohol40DoseGramg = alcohol40DoseGram / weight;
 
         const mixerDose = alcohol40DoseGram * 3;
 
