@@ -1,7 +1,18 @@
 @media (min-width: 481px){
 
+  html{
+    overflow: auto;
+    scrollbar-gutter: stable both-edges;
+  }
+  
+  h3{
+    font-size: 32px;
+  }
+
   .wrapper{
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .sidebar {
