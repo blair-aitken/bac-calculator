@@ -19,10 +19,25 @@ function showContent(contentId) {
     clickedButton.classList.add("active");
 }
 
+function displayResults(alcoholDose, mixerDose){
+    document.getElementById("calculator-results").classList.remove("hidden");
+    document.getElementById("calculator-instructions").classList.add("hidden");
+    
+    document.getElementById("alcohol-dose").innerHTML = alcoholDose;
+    document.getElementById("mixer-dose").innerHTML = mixerDose;
+}
+
+function displayInstructions(){
+    document.getElementById("calculator-results").classList.add("hidden");
+    document.getElementById("calculator-instructions").classList.remove("hidden");
+}
+
+
 // Initialize the first tabcontent and button as active
 document.addEventListener("DOMContentLoaded", function() {
     showContent('calculator');
 });
+
 
 // Function to calculate alcohol and mixer dose
 document.querySelectorAll('.input-field input, .input-field select').forEach(function(el) {
@@ -87,9 +102,10 @@ function calculateDose() {
 
         const mixerDose = alcohol40DoseGram * 3;
 
-        document.getElementById('result').innerHTML = `
-            <p1>Vodka:<br><strong>${alcohol40DoseGram.toFixed(2)} g</strong></p1>
-            <p2>Orange Juice:<br><strong>${mixerDose.toFixed(2)} g</strong></p2>`;
+        this.displayResults(alcohol40DoseGram.toFixed(2), mixerDose.toFixed(2));
+    }
+    else{
+        this.displayInstructions();
     }
 }
 

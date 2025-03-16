@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html{
+  overflow: auto;
+  scrollbar-gutter: stable both-edges;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -11,11 +16,19 @@ body {
   font-family: 'Raleway', sans-serif;
   background-color: #000000;
   color: #fff;
+  width: 100vw;
 }
 
 p {
-  max-width: 600px;
   line-height: 160%;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.bold{
+  font-weight: bold;
 }
 
 .code-block {
@@ -40,42 +53,8 @@ p {
 }
 
 .wrapper {
-  display: flex;
-}
-
-.sidebar {
-  background-color: #000000;
-  padding: 70px;
-  width: 400px;
-}
-
-.sidebar button {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  margin-bottom: 1px;
-  background-color: #000000;
-  color: #fff;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-top: 1px solid #333;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.sidebar button.active {
-  background-color: #fff;
-  color: #111;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  padding-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tabcontent {
@@ -87,32 +66,17 @@ p {
 }
 
 .container {
-  position: relative;
   max-width: 800px;
-  align-items: left;
-  justify-content: left;
 }
 
 h1 {
-  text-align: left;
   font-weight: 600;
   margin-bottom: 30px;
-  color: rgb(255, 255, 255);
 }
 
 h2 {
-  text-align: left;
   font-weight: 600;
   margin-bottom: 20px;
-  color: rgb(255, 255, 255);
-}
-
-h3 {
-  font-size: xx-large;
-  text-align: left;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: rgb(255, 255, 255);
 }
 
 form {
@@ -120,13 +84,8 @@ form {
   flex-direction: column;
 }
 
-.input-field:not(:last-child) {
-  margin-bottom: 25px;
-}
-
 .input-field {
   position: relative;
-  margin-bottom: 40px;
   display: flex;
   justify-content: left;
 }
@@ -140,15 +99,21 @@ form {
 }
 
 .input-field input {
-  width: 25%;
   border: 0;
   border-bottom: 1px solid #333;
   outline: 0;
   font-size: 1rem;
   padding: 10px;
   background: transparent;
-  text-align: center;
   color: white;
+}
+
+.input-field-unit{
+  display: flex;
+}
+
+.data-unit{
+  line-height: 45px;
 }
 
 .input-field select {
@@ -161,30 +126,10 @@ form {
   background-color: transparent;
 }
 
-#age {
-  width: 11.5%;
-}
-
-#height {
-  width: 9%;
-}
-
-#weight {
-  width: 8.75%;
-}
-
 #result {
-  position: absolute;
-  width: 50%;
-  height: 100px;
   padding-top: 20px;
   border-top: 1px solid #333;
-  line-height: 1.6;
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
 
 #result p1 {
@@ -204,26 +149,32 @@ form {
 label {
   align-content: center;
   margin-right: 15px;
+  margin-bottom: 0px;
 }
 
-.button-group button {
-  margin: 15px;
+button{
   padding: 14px;
   font-size: 16px;
-  cursor: pointer;
-  background-color: #000;
+  background-color: #000000;
   color: #ffffff;
-  border-radius: 5px;
   border: 1px solid #ddd;
+  cursor: pointer;
   transition: background-color 0.3s ease;
-  text-align: center;
+  border-radius: 5px;
 }
 
-.button-group button.active {
-  background-color: #fff !important;
+button.active {
+  background-color: #fff;
   color: #111;
   border-radius: 5px;
   font-weight: bold;
+}
+
+.sidebar button {
+  border: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  flex: 1;
 }
 
 .content-wrapper {
