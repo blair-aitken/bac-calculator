@@ -48,13 +48,18 @@ If you use this calculator in your research, please cite this repository. Here i
   howpublished = {\url{https://blair-aitken.github.io/BAC_Calculator}}
 }
 ```
+---
 
 ### Disclaimer
 
 This calculator is intended for informational purposes only. Please remember that the actual BAC achieved can vary with individual metabolic rates, health status, and other factors. This calculator should not be used to determine whether it is safe to drive or perform other tasks.
 
+---
+
 ### Contact information
 For questions or additional information about this repository, please contact the author at baitken@swin.edu.au.
+
+---
 
 ### References
 
