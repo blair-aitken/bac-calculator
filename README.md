@@ -1,24 +1,12 @@
-# BAC Calculator
+## BAC Calculator
 
-## Overview
+### Overview
 
 The BAC calculator serves as a tool for determining alcohol dosing based on an adjusted Watson method. The calculator is pre-configured for Vodka as the treatment and includes the most common target BACs reported in the literature. However, you are welcome to modify the JavaScript to change these settings as needed.
 
-## Table of Contents
+---
 
-- [Overview](#overview)
-- [How it Works](#how-it-works)
-- [Setup](#setup)
-  - [Web-based version](#web-based-version)
-  - [Local version](#local-version)
-- [How to use](#how-to-use)
-- [Citing this work](#citing-this-work)
-- [Disclaimer](#disclaimer)
-- [Contact information](#contact-information)
-- [References](#references)
-
-
-## How it Works
+### How it Works
 
 The calculator employs an adapted Widmark formula (Widmark, 1932) that employs the Watson method (Watson et al., 1981) to calculate total body water (TBW):
 
@@ -32,17 +20,19 @@ The calculator also takes into account (a) drinking duration (10 minutes for 0.0
 
 These parameters can be modified in the `script.js` JavaScript file.
 
-## Setup
+### Setup
 
-### Web-based version
+#### Web-based version
 
 For the web version, go to: https://blair-aitken.github.io/BAC_Calculator
 
-### Local version 
+#### Local version 
 
 For a local version, use `git clone` or download the project from this page. 
 
-## Citing this work
+---
+
+### Citing this work
 
 If you use this calculator in your research, please cite this repository. Here is an example citation:
 
@@ -57,14 +47,14 @@ If you use this calculator in your research, please cite this repository. Here i
 }
 ```
 
-## Disclaimer
+### Disclaimer
 
-This calculator is intended for informational purposes only. Please remember that the actual BAC achieved can vary with individual metabolic rates, health status, and other factors. This calculator should not be used to determine whether it is safe to drive or perform other tasks. Always drink responsibly and never drink and drive.
+This calculator is intended for informational purposes only. Please remember that the actual BAC achieved can vary with individual metabolic rates, health status, and other factors. This calculator should not be used to determine whether it is safe to drive or perform other tasks.
 
-## Contact information
+### Contact information
 For questions or additional information about this repository, please contact the author at baitken@swin.edu.au.
 
-## References
+### References
 
 Watson, P. E., Watson, I. D. & Batt, R. D. (1981). Prediction of blood alcohol concentrations in human subjects. Updating the Widmark Equation. _Journal of Studies on Alcohol and Drugs, 42_(7), 547-556.
 
