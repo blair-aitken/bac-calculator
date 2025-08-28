@@ -20,6 +20,8 @@ The calculator also takes into account (a) drinking duration (10 minutes for 0.0
 
 These parameters can be modified in the `script.js` JavaScript file.
 
+---
+
 ### Setup
 
 #### Web-based version
