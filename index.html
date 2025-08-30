@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BAC Calculator">
+    <meta name="theme-color" content="#007AFF">
+    <title>BAC Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/modern.css">
+</head>
+
+<body>
+    <div class="container">
+        <main class="main">
+            <div class="calculator-card">
+                <form id="bac-calculator">
+                    <div class="form-group">
+                        <label class="form-label">Sex</label>
+                        <div class="button-group">
+                            <button type="button" class="select-btn" onclick="selectOption('sex', 'male', this)">Male</button>
+                            <button type="button" class="select-btn" onclick="selectOption('sex', 'female', this)">Female</button>
+                        </div>
+                        <input type="hidden" id="sex" name="sex" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Age</label>
+                        <div class="input-group">
+                            <input type="number" id="age" name="age" class="form-input" placeholder="25" min="18" max="120" required>
+                            <span class="input-unit">years</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Height</label>
+                        <div class="input-group">
+                            <input type="number" id="height" name="height" class="form-input" placeholder="175" min="100" max="250" required>
+                            <span class="input-unit">cm</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Weight</label>
+                        <div class="input-group">
+                            <input type="number" id="weight" name="weight" class="form-input" placeholder="70" min="30" max="300" required>
+                            <span class="input-unit">kg</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Target BAC</label>
+                        <div class="button-group-single">
+                            <button type="button" class="select-btn" onclick="selectOption('brac', '0.05', this)">0.05%</button>
+                            <button type="button" class="select-btn" onclick="selectOption('brac', '0.08', this)">0.08%</button>
+                            <button type="button" class="select-btn" onclick="selectOption('brac', '0.10', this)">0.10%</button>
+                        </div>
+                        <input type="hidden" id="brac" name="brac" required>
+                    </div>
+                </form>
+
+                <div class="results-section">
+                    <div class="results-display">
+                        <div class="result-item">
+                            <div class="result-label">Vodka</div>
+                            <div class="result-value"><span id="alcohol-dose-header">-</span> <span class="unit">g</span></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Orange Juice</div>
+                            <div class="result-value"><span id="mixer-dose-header">-</span> <span class="unit">g</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="validation.js"></script>
+</body>
+
+</html>
