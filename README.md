@@ -6,21 +6,20 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
 
 ---
 
-## How it Works
+### How it Works
 
 This calculator estimates the alcohol dose needed to reach a target blood alcohol concentration (BAC) using an adapted Widmark equation (Widmark, 1932) combined with the Watson method for estimating total body water (TBW) (Watson et al., 1981).
 
-### Step 1: Estimate total body water (TBW)
+#### Step 1: Estimate total body water (TBW)
 
 The Watson equations use sex, age, height (cm), and weight (kg):
 
-- **Men:** TBW = 2.447 − (0.09516 × age) + (0.1074 × height) + (0.3362 × weight)  
-- **Women:** TBW = −2.097 + (0.1069 × height) + (0.2466 × weight)
+- **Men:** `TBW = 2.447 − (0.09516 × age) + (0.1074 × height) + (0.3362 × weight)`
+- **Women:** `TBW = −2.097 + (0.1069 × height) + (0.2466 × weight)`
 
 ### Step 2: Distribution volume
 
-Ethanol distributes into body water. The distribution volume is:  
-`Vd = 0.8 × TBW`
+Ethanol distributes into body water. The distribution volume is: `Vd = 0.8 × TBW`
 
 ### Step 3: Drinking pattern and metabolism
 
@@ -32,8 +31,7 @@ Effective time for metabolism is taken as the midpoint of drinking plus the dela
 
 ### Step 4: Ethanol dose
 
-The ethanol dose (grams) is:  
-`Dose = (Target BAC + β × time) × Vd`  
+The ethanol dose (grams) is: `Dose = (Target BAC + β × time) × Vd`  
 
 Where Target BAC is expressed in g/L (e.g., 0.05% = 0.5 g/L).
 
