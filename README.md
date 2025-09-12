@@ -6,71 +6,45 @@ The BAC calculator serves as a tool for determining alcohol dosing based on an a
 
 ---
 
-### How it Works
+## How it Works
 
-This calculator estimates the alcohol dose needed to reach a target blood alcohol concentration (BAC) using an adapted version of Widmark’s equation (Widmark, 1932) combined with the Watson method for estimating total body water (TBW) (Watson et al., 1981).
+This calculator estimates the alcohol dose needed to reach a target blood alcohol concentration (BAC) using an adapted Widmark equation (Widmark, 1932) combined with the Watson method for estimating total body water (TBW) (Watson et al., 1981).
 
-#### Step 1: Estimate total body water (TBW)
+### Step 1: Estimate total body water (TBW)
 
-The Watson equations use sex, age, height, and weight to estimate TBW in liters:
+The Watson equations use sex, age, height (cm), and weight (kg):
 
-- **Men**  
+- **Men:** TBW = 2.447 − (0.09516 × age) + (0.1074 × height) + (0.3362 × weight)  
+- **Women:** TBW = −2.097 + (0.1069 × height) + (0.2466 × weight)
 
-  $$
-  \text{TBW}_{men} = 2.447 - (0.09516 \times \text{age}) + (0.1074 \times \text{height}) + (0.3362 \times \text{weight})
-  $$
+### Step 2: Distribution volume
 
-- **Women**  
+Ethanol distributes into body water. The distribution volume is:  
+`Vd = 0.8 × TBW`
 
-  $$
-  \text{TBW}_{women} = -2.097 + (0.1069 \times \text{height}) + (0.2466 \times \text{weight})
-  $$
+### Step 3: Drinking pattern and metabolism
 
-(Height in cm, weight in kg, age in years.)
+- Drinking duration: 10 min for 0.05% BAC, 15 min for 0.08% BAC  
+- Time to peak BAC: 30 min for 0.05%, 45 min for 0.08%  
+- Elimination rate: β = 0.20 g/L/h (≈20 mg/100 mL/h)  
 
-#### Step 2: Calculate distribution volume
+Effective time for metabolism is taken as the midpoint of drinking plus the delay to peak BAC.
 
-Ethanol distributes into body water. The distribution volume is:
+### Step 4: Ethanol dose
 
-$$
-V_d = 0.8 \times \text{TBW}
-$$
+The ethanol dose (grams) is:  
+`Dose = (Target BAC + β × time) × Vd`  
 
-#### Step 3: Adjust for drinking pattern and metabolism
+Where Target BAC is expressed in g/L (e.g., 0.05% = 0.5 g/L).
 
-- **Drinking duration:** 10 minutes for 0.05% BAC, 15 minutes for 0.08% BAC  
-- **Time to peak BAC:** 30 minutes for 0.05%, 45 minutes for 0.08%  
-- **Elimination rate:** $\beta = 0.20 \,\text{g/L/h}$ (≈ 20 mg/100 mL/h)  
+### Step 5: Convert to drinks
 
-The effective time available for metabolism is approximated as the midpoint of drinking plus the delay to peak BAC.
-
-#### Step 4: Calculate ethanol dose
-
-The ethanol dose in grams is:
-
-$$
-\text{Dose (g)} = \big(C_{\text{target}} + \beta \cdot t\big) \times V_d
-$$
-
-Where:  
-- $C_{\text{target}}$ = target BAC (e.g., 0.05% = 0.5 g/L)  
-- $\beta$ = elimination rate (0.20 g/L/h)  
-- $t$ = effective time in hours  
-- $V_d$ = distribution volume (0.8 × TBW)  
-
-#### Step 5: Convert to drinks
-
-The ethanol dose is converted to a beverage volume using:  
-
+The ethanol dose is converted into a beverage volume assuming:  
 - Ethanol density = 0.789 g/mL  
-- Vodka at 40% alcohol by volume (ABV)  
-- Mixer = 3 parts per 1 part vodka (optional display)
+- Vodka = 40% alcohol by volume (ABV)  
+- Mixer = 3 parts per 1 part vodka (optional)  
 
-$$
-\text{Vodka (mL)} = \frac{\text{Dose (g)}}{0.789 \times 0.40}
-$$
-
----
+`Vodka (mL) = Dose / (0.789 × 0.40)`
 
 All parameters (elimination rate, drinking duration, correction factor, etc.) can be modified in the `script.js` file.
 
