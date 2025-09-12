@@ -17,30 +17,30 @@ The Watson equations use sex, age, height (cm), and weight (kg):
 - **Men:** `TBW = 2.447 − (0.09516 × age) + (0.1074 × height) + (0.3362 × weight)`
 - **Women:** `TBW = −2.097 + (0.1069 × height) + (0.2466 × weight)`
 
-### Step 2: Distribution volume
+#### Step 2: Distribution volume
 
 Ethanol distributes into body water. The distribution volume is: `Vd = 0.8 × TBW`
 
-### Step 3: Drinking pattern and metabolism
+#### Step 3: Drinking pattern and metabolism
 
-- Drinking duration: 10 min for 0.05% BAC, 15 min for 0.08% BAC  
-- Time to peak BAC: 30 min for 0.05%, 45 min for 0.08%  
-- Elimination rate: β = 0.20 g/L/h (≈20 mg/100 mL/h)  
+- Drinking duration: `10 min for 0.05% BAC, 15 min for 0.08% BAC`
+- Time to peak BAC: `30 min for 0.05%, 45 min for 0.08%` 
+- Elimination rate: β = `0.20 g/L/h (≈20 mg/100 mL/h)`  
 
 Effective time for metabolism is taken as the midpoint of drinking plus the delay to peak BAC.
 
-### Step 4: Ethanol dose
+#### Step 4: Ethanol dose
 
 The ethanol dose (grams) is: `Dose = (Target BAC + β × time) × Vd`  
 
 Where Target BAC is expressed in g/L (e.g., 0.05% = 0.5 g/L).
 
-### Step 5: Convert to drinks
+#### Step 5: Convert to drinks
 
 The ethanol dose is converted into a beverage volume assuming:  
-- Ethanol density = 0.789 g/mL  
-- Vodka = 40% alcohol by volume (ABV)  
-- Mixer = 3 parts per 1 part vodka (optional)  
+- Ethanol density = `0.789 g/mL`  
+- Vodka = `40% alcohol by volume (ABV)`  
+- Mixer = `3 parts per 1 part vodka (optional)`  
 
 `Vodka (mL) = Dose / (0.789 × 0.40)`
 
