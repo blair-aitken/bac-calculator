@@ -71,7 +71,7 @@ function calculateDose() {
         // ----------------------------
         const ethanolDensity = 0.789;   // g/mL
         const vodkaABV = 0.40;          // 40% vodka
-        const beta = 0.20;              // g/L/h elimination (20 mg/100mL/h)
+        const beta = 0.30;              // g/L/h elimination (20 mg/100mL/h)
         
         // Target BAC in g/L
         const targetConc = brac * 10;   // 0.05 → 0.5 g/L, 0.08 → 0.8 g/L
