@@ -1,16 +1,13 @@
 
-// Global state
 let currentCalculation = null;
 
 function displayResults(alcoholDose, mixerDose) {
-    // Update values
     const alcoholEl = document.getElementById("alcohol-dose-header");
     const mixerEl = document.getElementById("mixer-dose-header");
     
     alcoholEl.textContent = alcoholDose.toFixed(2);
     mixerEl.textContent = mixerDose.toFixed(2);
     
-    // Store current calculation
     currentCalculation = {
         alcoholDose: alcoholDose,
         mixerDose: mixerDose,
@@ -20,14 +17,10 @@ function displayResults(alcoholDose, mixerDose) {
 }
 
 function displayInstructions() {
-    // Reset values to placeholders
     document.getElementById("alcohol-dose-header").textContent = "-";
     document.getElementById("mixer-dose-header").textContent = "-";
 }
 
-
-
-// Helper functions
 function getCurrentInputs() {
     return {
         sex: document.getElementById('sex').value,
@@ -38,19 +31,12 @@ function getCurrentInputs() {
     };
 }
 
-
-
-
-// Function to calculate alcohol and mixer dose
 document.addEventListener('DOMContentLoaded', function() {
-    // Set up input listeners
-    document.querySelectorAll('.form-input').forEach(function (el) {
-        el.addEventListener('input', function () {
-            calculateDose();
-        });
+    document.querySelectorAll('#sex, #age, #height, #weight, #brac').forEach(function (el) {
+        el.addEventListener('input', calculateDose);
+        el.addEventListener('change', calculateDose);
     });
-    
-    // Keyboard shortcuts
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && e.target.tagName !== 'BUTTON') {
             calculateDose();
@@ -72,6 +58,7 @@ function calculateDose() {
         const ethanolDensity = 0.789;   // g/mL
         const vodkaABV = 0.40;          // 40% vodka
         const beta = 0.30;              // g/L/h elimination (20 mg/100mL/h)
+        const correctionFactor = 1.5;   // to account for variability in metabolism
         
         // Target BAC in g/L
         const targetConc = brac * 10;   // 0.05 → 0.5 g/L, 0.08 → 0.8 g/L
@@ -113,7 +100,8 @@ function calculateDose() {
         // ----------------------------
         // Dose calculation
         // ----------------------------
-        const A_g = (targetConc + beta * t) * Vd; // grams of ethanol
+        let A_g = (targetConc + beta * t) * Vd; // grams ethanol
+        A_g *= correctionFactor; // adjust for variability
 
         // Convert to mL of 40% vodka
         const vodka_mL = A_g / (ethanolDensity * vodkaABV);
@@ -129,8 +117,7 @@ function calculateDose() {
 
 function selectOption(field, value, button) {
     document.getElementById(field).value = value;
-
-    // Update the active state of buttons within the same group
+    
     const buttons = button.parentElement.querySelectorAll('button');
     buttons.forEach(function (btn) {
         btn.classList.remove("active");
