@@ -61,62 +61,68 @@ document.addEventListener('DOMContentLoaded', function() {
 function calculateDose() {
     const sex = document.getElementById('sex').value;
     const age = parseFloat(document.getElementById('age').value);
-    const height = parseFloat(document.getElementById('height').value);
-    const weight = parseFloat(document.getElementById('weight').value);
-    const brac = parseFloat(document.getElementById('brac').value);
+    const height = parseFloat(document.getElementById('height').value); // cm
+    const weight = parseFloat(document.getElementById('weight').value); // kg
+    const brac = parseFloat(document.getElementById('brac').value);     // e.g. 0.05, 0.08
 
     if (sex && age && height && weight && brac) {
-        const eliminationRate = 0.3; // Alcohol elimination rate
+        // ----------------------------
+        // Constants
+        // ----------------------------
+        const ethanolDensity = 0.789;   // g/mL
+        const vodkaABV = 0.40;          // 40% vodka
+        const beta = 0.20;              // g/L/h elimination (20 mg/100mL/h)
+        
+        // Target BAC in g/L
+        const targetConc = brac * 10;   // 0.05 → 0.5 g/L, 0.08 → 0.8 g/L
 
+        // Drinking duration & expected peak times (minutes)
         let drinkingDuration;
-        if (brac === 0.10) {
-            drinkingDuration = 30;
-        } else if (brac === 0.08) {
-            drinkingDuration = 15;
-        } else {
-            drinkingDuration = 10;
-        }
-
         let expectedPeak;
         if (brac === 0.10) {
+            drinkingDuration = 30;
             expectedPeak = 55;
         } else if (brac === 0.08) {
+            drinkingDuration = 15;
             expectedPeak = 45;
         } else if (brac === 0.06) {
+            drinkingDuration = 10;
             expectedPeak = 40;
         } else {
-            expectedPeak = 35;
+            drinkingDuration = 10;
+            expectedPeak = 30;
         }
 
-        let estimatedTotalBodyWater;
+        // ----------------------------
+        // Watson TBW
+        // ----------------------------
+        let TBW;
         if (sex === 'male') {
-            estimatedTotalBodyWater = 2.447 - 0.09516 * age + 0.1074 * height + 0.3362 * weight;
+            TBW = 2.447 - 0.09516 * age + 0.1074 * height + 0.3362 * weight;
         } else {
-            estimatedTotalBodyWater = -2.097 - 0.1069 * age + 0.2466 * height + 0.3362 * weight;
+            TBW = -2.097 + 0.1069 * height + 0.2466 * weight;
         }
 
-        let variable2E;
-        if (brac === 0.08) {
-            variable2E = 0.88;
-        } else if (brac === 0.10) {
-            variable2E = 1.10;
-        } else if (brac === 0.06) {
-            variable2E = 0.66;
-        } else if (brac === 0.05) {
-            variable2E = 0.55;
-        }
+        // Ethanol distribution volume (L)
+        const Vd = 0.8 * TBW;
 
-        const alcohol100DoseGram = (variable2E * estimatedTotalBodyWater / 0.8) + (eliminationRate * (drinkingDuration / 60 + expectedPeak / 60) * (estimatedTotalBodyWater / 0.8));
+        // Effective time for elimination (h) 
+        // midpoint of drinking + time after last sip
+        const t = (drinkingDuration / 2 + expectedPeak) / 60;
 
-        const alcohol40DoseGram = alcohol100DoseGram / 0.345;
+        // ----------------------------
+        // Dose calculation
+        // ----------------------------
+        const A_g = (targetConc + beta * t) * Vd; // grams of ethanol
 
-        const alcohol40DoseGramg = alcohol40DoseGram / weight;
+        // Convert to mL of 40% vodka
+        const vodka_mL = A_g / (ethanolDensity * vodkaABV);
 
-        const mixerDose = alcohol40DoseGram * 3;
+        // Mixer: assume 3 parts mixer per 1 part vodka
+        const mixer_mL = vodka_mL * 3;
 
-        displayResults(alcohol40DoseGram, mixerDose);
-    }
-    else {
+        displayResults(vodka_mL, mixer_mL);
+    } else {
         displayInstructions();
     }
 }
