@@ -65,13 +65,13 @@ For a local version, use `git clone` or download the project from this page.
 If you use this calculator in your research, please cite this repository. Here is an example citation:
 
 ```
-@misc{Aitken2023,
+@misc{Aitken2025,
   author = {Blair Aitken},
   title = {BAC Calculator},
-  year = {2023},
+  year = {2025},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://blair-aitken.github.io/BAC_Calculator}}
+  howpublished = {\url{https://blair-aitken.github.io/bac-calculator}}
 }
 ```
 ---
